@@ -56,5 +56,24 @@ namespace CaesarCipher
         {
 
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            afterDecryption.Text = string.Empty;
+            int DKey = Int32.Parse(decryptionKey.Text);
+
+            for (int i = 0; i < txtForDecryption.Text.Length; i++)
+            {
+                char TmpLetter = txtForDecryption.Text[i];
+                TmpLetter = (char)(TmpLetter - DKey);
+
+                if (TmpLetter > 'z')
+                    TmpLetter = (char)(TmpLetter - 26);
+                else if (TmpLetter < 'a')
+                    TmpLetter = (char)(TmpLetter + 26);
+
+                afterDecryption.Text += TmpLetter;
+            }
+        }
     }
 }
