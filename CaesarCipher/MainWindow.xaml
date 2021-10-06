@@ -17,8 +17,8 @@
                 </TransformGroup>
             </TextBlock.RenderTransform><Run Language="pl-pl" Text="SZYFR CEZARA"/></TextBlock>
         <TextBlock FontSize="30px" TextWrapping="Wrap" Margin="10,49,467,265"><Run Language="pl-pl" Text="Szyfrowanie"/></TextBlock>
-        <TextBox Text="Tekst który ma być szyfrowany" TextWrapping="Wrap" Margin="10,97,522,247"/>
-        <TextBox Text="TextBox" TextWrapping="Wrap" Margin="493,97,226,283"/>
+        <TextBox x:Name="txtForEncryption" Text="Tekst który ma być szyfrowany" TextWrapping="Wrap" Margin="10,97,522,247" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="encryptionKey" Text="34" TextWrapping="Wrap" Margin="493,97,226,283" TextChanged="encryptionKey_TextChanged"/>
         <TextBlock FontSize="20px" TextWrapping="Wrap" Margin="583,106,49,251" RenderTransformOrigin="0.5,0.5">
             <TextBlock.RenderTransform>
                 <TransformGroup>
@@ -28,14 +28,14 @@
                     <TranslateTransform X="0.459"/>
                 </TransformGroup>
             </TextBlock.RenderTransform><Run Language="pl-pl" Text="Klucz Szyfrujący"/></TextBlock>
-        <Button Content="Szyfruj" Margin="493,156,173,217"/>
-        <TextBlock TextWrapping="Wrap" Margin="10,217,501,124"><Run Language="pl-pl" Text="Zaszyfrowany tekst"/></TextBlock>
+        <Button Content="Szyfruj" Margin="493,156,173,217" Click="Button_Click"/>
+        <TextBlock x:Name="afterEncription" TextWrapping="Wrap" Margin="10,217,501,124"><Run Language="pl-pl" Text="Zaszyfrowany tekst"/></TextBlock>
         <TextBlock FontSize="30px" TextWrapping="Wrap" Margin="10,242,440,68"><Run Language="pl-pl" Text="Des"/><Run Text="zyfr"/><Run Language="pl-pl" Text="acja"/></TextBlock>
-        <TextBox Text="TextBox" TextWrapping="Wrap" Margin="493,239,226,134"/>
+        <TextBox x:Name="decryptionKey" Text="34" TextWrapping="Wrap" Margin="493,239,226,134"/>
         <TextBlock FontSize="20px" TextWrapping="Wrap" Margin="579,252,7,101"><Run Text="Klucz "/><Run Language="pl-pl" Text="Des"/><Run Text="zyfrujący"/></TextBlock>
-        <Button Content="Deszyfruj" Margin="493,300,173,68" Click="Button_Click"/>
+        <Button Content="Deszyfruj" Margin="493,300,173,68"/>
         <TextBlock TextWrapping="Wrap" Margin="10,371,522,10"><Run Language="pl-pl" Text="Tekst po deszyfracji"/></TextBlock>
-        <TextBox Text="Tekst który ma być deszyfrowany" TextWrapping="Wrap" Margin="10,281,522,63"/>
+        <TextBox x:Name="txtForDecryption" Text="Tekst który ma być deszyfrowany" TextWrapping="Wrap" Margin="10,281,522,63"/>
 
     </Grid>
 </Window>

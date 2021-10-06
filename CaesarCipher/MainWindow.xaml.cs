@@ -23,9 +23,36 @@ namespace CaesarCipher
         public MainWindow()
         {
             InitializeComponent();
+            txtForEncryption.Text = string.Empty;
+            txtForEncryption.Text = "Wprowadz tekst do zaszyfrowania";
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            afterEncription.Text = string.Empty;
+            int key = Int32.Parse(encryptionKey.Text);
+
+            for (int i = 0; i < txtForEncryption.Text.Length; i++)
+            {
+                char letter = txtForEncryption.Text[i];
+                letter = (char)(letter + key);
+
+                if (letter > 'z')
+                    letter = (char)(letter - 26);
+                else if (letter < 'a')
+                    letter = (char)(letter + 26);
+
+                afterEncription.Text += letter;
+            }   
+            
+        }
+
+        private void encryptionKey_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
