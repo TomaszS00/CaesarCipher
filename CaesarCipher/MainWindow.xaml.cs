@@ -34,14 +34,18 @@ namespace CaesarCipher
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            char[] alphabet = new char[] { 'A','Ą','B','C','Ć','D','E','Ę','F','G','H','I','J','K','L','Ł','M','N','Ń','O','Ó','P','Q','R','S','Ś','T','U','V','W','X','Y','Z','Ź','Ż' };
             afterEncription.Text = string.Empty;
             int key = Int32.Parse(encryptionKey.Text);
 
+            
             for (int i = 0; i < txtForEncryption.Text.Length; i++)
             {
                 char letter = txtForEncryption.Text[i];
                 letter = (char)(letter + key);
 
+                
+            
                 if (letter > 'z')
                     letter = (char)(letter - 26);
                 else if (letter < 'a')
